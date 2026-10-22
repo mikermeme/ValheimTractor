@@ -1,0 +1,558 @@
+C	AchievementUnlockPopup	
+C	Achievements	
+C	AchievementsGui	
+C	AmplifyOcclusionEffect	
+C	AnimalAI	BaseAI
+C	Aoe	
+C	ArcheryTarget	
+C	ArmorStand	
+C	AudioMan	
+C	AutoJumpLedge	
+C	BackElement	GroupElement RadialMenuElement
+C	Barber	
+C	BaseAI	
+C	Beacon	
+C	Bed	
+C	Beehive	
+C	Billboard	
+C	BossStone	
+C	BuildUiTagButton	
+C	CamShaker	
+C	CameraEffects	
+C	CaptionArrow	
+C	CaptionItem	
+C	Catapult	
+C	Chair	
+C	ChangeLog	
+C	Character	
+C	CharacterAnimEvent	
+C	CharacterDrop	
+C	CharacterTimedDestruction	
+C	Chat	Terminal
+C	CheatUtils	
+C	Cinder	
+C	CinderSpawner	
+C	CinematicsManager	
+C	CircleProjector	
+C	ClosedCaptions	
+C	ClutterSystem	
+C	ConditionalObject	
+C	ConnectPanel	
+C	Console	Terminal
+C	Container	
+C	CookingStation	
+C	Corpse	
+C	CraftingStation	
+C	CreatureSpawner	
+C	CreditsTextReplace	
+C	DamageText	
+C	Demister	
+C	DepthCamera	
+C	Destructible	
+C	DistantFogEmitter	
+C	Door	
+C	DropOnDestroyed	
+C	DropProjectileOverDistance	
+C	DungeonGenerator	
+C	EffectArea	
+C	EffectFade	
+C	EffectList	
+C	EggGrow	
+C	EggHatch	
+C	EmitterRotation	
+C	EmoteElement	RadialMenuElement
+C	EmptyElement	RadialMenuElement
+C	EndCredits	
+C	EnemyHud	
+C	EnvMan	
+C	EnvZone	
+C	EulaWindow	
+C	EventZone	
+C	Feast	
+C	FejdStartup	
+C	Fermenter	
+C	Fire	
+C	Fireplace	
+C	Fish	
+C	FishingFloat	
+C	Floating	
+C	FloatingTerrain	
+C	FollowPlayer	
+C	FootStep	
+C	Game	
+C	GameCamera	
+C	GamepadRumble	
+C	Gibber	
+C	GlobalWind	
+C	GrapplingPoint	
+C	GroupElement	RadialMenuElement
+C	Growup	
+C	GuidePoint	
+C	HammerItemElement	GroupElement RadialMenuElement
+C	HeatDistortImageEffect	
+C	Heightmap	
+C	HitArea	
+C	HotkeyBar	
+C	HoverText	
+C	Hud	
+C	Humanoid	Character
+C	ImpactEffect	
+C	Incinerator	
+C	InstanceRenderer	
+C	InstantiatePrefab	
+C	InventoryElement	
+C	InventoryGrid	
+C	InventoryGui	
+C	ItemDrop	
+C	ItemElement	RadialMenuElement
+C	ItemStand	
+C	JoinCode	
+C	KeyButton	
+C	KeyHints	
+C	KeyHintsRadial	
+C	KeySlider	KeyUI
+C	KeyToggle	KeyUI
+C	Ladder	
+C	LevelEffects	
+C	Leviathan	
+C	LightFlicker	
+C	LightLod	
+C	LineConnect	
+C	LiquidVolume	
+C	Location	
+C	LocationList	
+C	LocationProxy	
+C	LookAt	
+C	LootSpawner	
+C	LuredWisp	
+C	MapTable	
+C	MaterialFader	
+C	MaterialVariation	
+C	Menu	
+C	MenuScene	
+C	MenuShipMovement	
+C	MessageHud	
+C	MeteorSmash	
+C	MineRock	
+C	MineRock5	
+C	Minimap	
+C	MistEmitter	
+C	Mister	
+C	MonsterAI	BaseAI
+C	MovementDamage	
+C	MovementTest	
+C	MusicLocation	
+C	MusicMan	
+C	MusicVolume	
+C	NavmeshTest	
+C	NpcTalk	
+C	ObjectFlicker	
+C	ObjectSwitcher	
+C	Odin	
+C	OfferingBowl	
+C	ParticleDecal	
+C	ParticleIntensityScaler	
+C	ParticleMist	
+C	Pathfinding	
+C	PersistentEventSystemDirectionHelper	
+C	Pet	
+C	Petable	
+C	Pickable	
+C	PickableItem	
+C	Piece	StaticTarget
+C	PieceTable	
+C	Plant	SlowUpdate
+C	PlatformSpecificLocalization	
+C	PlayFabManager	
+C	Player	Humanoid Character
+C	PlayerController	
+C	PlayerCustomizaton	
+C	PrivateArea	
+C	Procreation	
+C	Projectile	
+C	ProximityState	
+C	Radiator	
+C	Ragdoll	
+C	RandEventSystem	
+C	RandomFlyingBird	
+C	RandomMaterialValues	
+C	RandomMovement	
+C	RandomObject	
+C	RandomPieceRotation	
+C	RandomSpawn	
+C	RandomSpeak	
+C	Raven	
+C	ReflectionUpdate	
+C	ResourceRoot	
+C	Room	
+C	RoomConnection	
+C	RopeAttachment	
+C	RuneStone	
+C	SEMan	
+C	Sadle	
+C	SapCollector	
+C	ServerListGui	
+C	ServerOptionsGUI	
+C	ShieldDomeImageEffect	
+C	ShieldGenerator	
+C	Ship	
+C	ShipConstructor	
+C	ShipControlls	
+C	ShipEffects	
+C	SiegeMachine	
+C	Sign	
+C	Skills	
+C	SkillsDialog	
+C	Smelter	
+C	Smoke	
+C	SmokeSpawner	
+C	SnapToGround	
+C	SnowDestruction	
+C	SnowRoller	
+C	SpawnAbility	
+C	SpawnArea	
+C	SpawnOnDamaged	
+C	SpawnPrefab	
+C	SpawnSystem	
+C	StaticPhysics	SlowUpdate
+C	StaticRotation	
+C	StaticTarget	
+C	StationExtension	
+C	StealthSystem	
+C	StoreGui	
+C	Switch	
+C	TabHandler	
+C	Tail	
+C	Talker	
+C	Tameable	
+C	Teleport	
+C	TeleportAbility	
+C	TeleportWorld	
+C	Terminal	
+C	TerrainComp	
+C	TerrainModifier	
+C	TerrainOp	
+C	TestSceneCharacter	
+C	TextInput	
+C	TextViewer	
+C	TextsDialog	
+C	ThorFly	
+C	ThrowElement	RadialMenuElement
+C	ThrowElementInfo	ElementInfo
+C	Thunder	
+C	TimedDestruction	
+C	ToggleSwitch	
+C	TombStone	
+C	Trader	
+C	Trap	
+C	TreeBase	
+C	TreeLog	
+C	TriggerSpawnAbility	
+C	TriggerSpawner	
+C	Turret	
+C	Tutorial	
+C	UIGamePad	
+C	Vagon	
+C	Valkyrie	
+C	VariantDialog	
+C	Vegvisir	
+C	Vine	
+C	VisEquipment	
+C	WarriorNames	
+C	WaterTrigger	
+C	WaterVolume	
+C	WayStone	
+C	WeaponLoadState	
+C	WearNTear	
+C	Windmill	
+C	WispSpawner	
+C	ZDO	
+C	ZDOHelper	
+C	ZDOMan	
+C	ZNet	
+C	ZNetView	
+C	ZSFX	
+C	ZSyncAnimation	
+C	ZSyncTransform	
+C	ZoneSystem	
+K	ArcheryTarget	data	2619694	bytes
+K	ArcheryTarget	dataCount	586955499	int
+K	ArcheryTarget	HitPoint	860797725	int
+K	ArmorStand	pose	1414245329	int
+K	BaseAI	aggravated	675643124	bool
+K	BaseAI	alert	304479836	bool
+K	BaseAI	bosscount	1892297486	bool
+K	BaseAI	haveTarget	1236514103	bool
+K	BaseAI	huntplayer	-774741754	bool
+K	BaseAI	lastWorldTime	-967370359	long
+K	BaseAI	patrol	140431120	bool
+K	BaseAI	patrolPoint	1301850986	vec3
+K	BaseAI	ShownAlertMessage	-1735754310	bool
+K	BaseAI	spawnpoint	739771651	vec3
+K	BaseAI	spawntime	28332284	long
+K	Bed	owner	-1563863159	long
+K	Bed	ownerName	1227488406	string
+K	Beehive	lastTime	136318255	long
+K	Beehive	level	1594891052	int
+K	Beehive	product	-1793834997	float
+K	Catapult	Locked	-561219288	bool
+K	Catapult	visual	-151830006	string
+K	Character	Attackers	964587826	int
+K	Character	BodyVelocity	394770587	vec3
+K	Character	bosscount	1892297486	bool
+K	Character	health	-883022132	float
+K	Character	level	1594891052	int
+K	Character	max_health	-1725103249	float
+K	Character	Modifiers	1767464916	int
+K	Character	noise	82773412	float
+K	Character	overrideHoverName	1652771173	string
+K	Character	RandomSkillFactor	1047226983	float
+K	Character	tamed	-1779187331	bool
+K	Character	tiltrot	-845014354	quat
+K	CharacterAnimEvent	LookTarget	-1185151196	vec3
+K	CheatUtils	cheated	-153476768	int
+K	Cinder	spread	-1627606839	int
+K	CinderSpawner	spread	-1627606839	int
+K	Container	addedDefaultItems	1981281673	bool
+K	Container	InUse	-58355724	int
+K	Container	items	-938864442	bytes
+K	CookingStation	fuel	1743624050	float
+K	CookingStation	StartTime	2138448017	long
+K	Corpse	timeOfDeath	-35297356	long
+K	CreatureSpawner	alive_time	-181569555	long
+K	Destructible	health	-883022132	float
+K	Door	state	1695925803	int
+K	DungeonGenerator	preSnow	491610272	bool
+K	DungeonGenerator	roomData	790421931	bytes
+K	DungeonGenerator	rooms	1958046798	int
+K	EffectList	ownerZDOId	203554489	long
+K	EffectList	ownerZDOUserId	1636053838	long
+K	EggGrow	GrowStart	-729321687	float
+K	Feast	Value	1803358415	int
+K	Fermenter	cheatedQueued	554813359	bool
+K	Fermenter	Content	1563053001	int
+K	Fermenter	StartTime	2138448017	int
+K	Fireplace	fuel	1743624050	float
+K	Fireplace	lastTime	136318255	long
+K	Fireplace	state	1695925803	int
+K	Fish	escape	1110997421	int
+K	Fish	hooked	-561256576	int
+K	Fish	spawnpoint	739771651	vec3
+K	FishingFloat	Bait	49675166	string
+K	FishingFloat	CatchID_i	691218636	long
+K	FishingFloat	CatchID_u	691218624	long
+K	FishingFloat	rodOwner	747809534	long
+K	Game	inBed	1460638832	bool
+K	Game	tag	696029674	string
+K	Gibber	HitDir	210563474	vec3
+K	Gibber	HitPoint	860797725	vec3
+K	GrapplingPoint	owner	-1563863159	long
+K	Humanoid	IsBlocking	-240672937	bool
+K	Humanoid	seed	-158744921	int
+K	ItemDrop	piece	156685568	bool
+K	ItemDrop	quality	917906861	int
+K	ItemDrop	spawntime	28332284	long
+K	ItemDrop	variant	1759467715	int
+K	ItemStand	item	-1126421579	int
+K	ItemStand	quality	917906861	int
+K	ItemStand	type	1421151742	int
+K	ItemStand	variant	1759467715	int
+K	Leviathan	dead	-158745804	bool
+K	LiquidVolume	LiquidData	580345874	bytes
+K	LocationProxy	location	-1971051955	int
+K	LocationProxy	seed	-158744921	int
+K	LootSpawner	spawntime	28332284	long
+K	MapTable	data	2619694	bytes
+K	MineRock5	health	-883022132	string
+K	MonsterAI	DespawnInDay	2071675473	bool
+K	MonsterAI	EventCreature	-1311243421	bool
+K	MonsterAI	sleeping	924266903	bool
+K	MusicLocation	played	560949	bool
+K	MusicVolume	plays	257442231	int
+K	Pickable	enabled	633313253	bool
+K	Pickable	picked	197492418	bool
+K	Pickable	picked_time	759487170	long
+K	PickableItem	itemPrefab	-774552753	int
+K	PickableItem	itemStack	-1994666937	int
+K	Piece	creator	881008290	long
+K	Piece	creatorIndex	-1449744342	int
+K	Plant	plantTime	-772110590	long
+K	Plant	seed	-158744921	int
+K	Player	adrenaline	-497281241	float
+K	Player	baseValue	522544404	int
+K	Player	crowned	-1982637764	bool
+K	Player	dead	-158745804	bool
+K	Player	DebugFly	-1148222662	bool
+K	Player	dodgeinv	1613755080	bool
+K	Player	eitr	1985542954	float
+K	Player	emote	445638678	string
+K	Player	emote_oneshot	-51710511	bool
+K	Player	emoteID	893645975	int
+K	Player	inBed	1460638832	bool
+K	Player	playerID	892079254	long
+K	Player	playerName	2001454704	string
+K	Player	pvp	-1582514876	bool
+K	Player	stamina	621979929	float
+K	Player	Stealth	91907659	float
+K	Player	wakeup	234285121	bool
+K	Player	WeaponLoaded	-1030409335	bool
+K	PrivateArea	creatorName	780827395	string
+K	PrivateArea	enabled	633313253	bool
+K	PrivateArea	permitted	-700324150	int
+K	Procreation	lovePoints	1413848227	int
+K	Procreation	pregnant	1675098729	long
+K	Projectile	visual	-151830006	string
+K	Ragdoll	drops	-831214912	int
+K	Ragdoll	Hue	-1985798408	float
+K	Ragdoll	InitVel	-1603061055	vec3
+K	Ragdoll	level	1594891052	int
+K	Ragdoll	Saturation	1124571902	float
+K	Ragdoll	Value	1803358415	float
+K	RandomFlyingBird	landed	-74907690	bool
+K	RandomFlyingBird	spawnpoint	739771651	vec3
+K	RandomMaterialValues	RandMatSeed	-1049702188	int
+K	ResourceRoot	lastTime	136318255	long
+K	ResourceRoot	level	1594891052	float
+K	SEMan	seAttrib	-126240578	int
+K	Sadle	stamina	621979929	float
+K	Sadle	user	1448002985	long
+K	SapCollector	lastTime	136318255	long
+K	SapCollector	level	1594891052	int
+K	SapCollector	product	-1793834997	float
+K	ShieldGenerator	fuel	1743624050	float
+K	ShieldGenerator	StartTime	2138448017	long
+K	Ship	forward	-1429199297	int
+K	Ship	rudder	-1299519756	float
+K	ShipConstructor	done	1414244698	bool
+K	ShipConstructor	spawntime	28332284	long
+K	ShipControlls	user	1448002985	long
+K	Sign	author	-734892015	string
+K	Sign	authorPlatformDisplayName	-1847800717	string
+K	Sign	text	-871206003	string
+K	Smelter	accTime	-463628954	float
+K	Smelter	bakeTimer	-1930913080	float
+K	Smelter	cheatedQueued	554813359	bool
+K	Smelter	fuel	1743624050	float
+K	Smelter	item0	-938864379	string
+K	Smelter	queued	-2086149575	int
+K	Smelter	SpawnAmount	-1430737377	int
+K	Smelter	SpawnOre	543655539	string
+K	Smelter	StartTime	2138448017	long
+K	SpawnAbility	MaxInstances	613850540	int
+K	SpawnAbility	RandomSkillFactor	1047226983	float
+K	SpawnSystem	EventCreature	-1311243421	bool
+K	StaticRotation	tiltrot	-845014354	float
+K	Tameable	follow	1072078645	string
+K	Tameable	HaveSaddle	1691288069	bool
+K	Tameable	MaxInstances	613850540	int
+K	Tameable	TamedName	-2127724858	string
+K	Tameable	TamedNameAuthor	1537793547	string
+K	Tameable	TameLastFeeding	-1853936235	long
+K	Tameable	TameTimeLeft	-1803386213	float
+K	TeleportWorld	tag	696029674	string
+K	TeleportWorld	tagauthor	-1565613777	string
+K	Terminal	HasFields	-310439593	bool
+K	Terminal	tag	696029674	string
+K	TerrainComp	TCData	1305470367	bytes
+K	TerrainModifier	terrainModifierTimeCreated	-1101833055	long
+K	TombStone	inWater	-347509016	bool
+K	TombStone	owner	-1563863159	long
+K	TombStone	ownerName	1227488406	string
+K	TombStone	spawnpoint	739771651	vec3
+K	TombStone	timeOfDeath	-35297356	long
+K	Trap	state	1695925803	int
+K	Trap	triggered	-1587412967	float
+K	TreeBase	health	-883022132	float
+K	TreeLog	health	-883022132	float
+K	TriggerSpawner	spawntime	28332284	long
+K	Turret	ammo	1730069260	int
+K	Turret	ammoType	640009524	string
+K	Turret	lastAttack	-335870158	float
+K	Turret	targets	-1319204696	int
+K	Vagon	attachJoint	270116833	bool
+K	Vine	GrowStart	-729321687	long
+K	Vine	offset	1673268925	vec3
+K	Vine	plantTime	-772110590	long
+K	Vine	type	1421151742	int
+K	VisEquipment	BeardItem	-909684655	int
+K	VisEquipment	ChestItem	575595752	int
+K	VisEquipment	HairColor	799386663	vec3
+K	VisEquipment	HairItem	1556583347	int
+K	VisEquipment	HelmetItem	1428118600	int
+K	VisEquipment	LeftBackItem	-284407675	int
+K	VisEquipment	LeftBackItemQuality	-465376876	int
+K	VisEquipment	LeftBackItemVariant	-107719464	int
+K	VisEquipment	LeftItem	-1846321564	int
+K	VisEquipment	LeftItemQuality	1895375267	int
+K	VisEquipment	LeftItemVariant	2024344713	int
+K	VisEquipment	LegItem	413923187	int
+K	VisEquipment	ModelIndex	-1224146579	int
+K	VisEquipment	noBeard	-1099767395	bool
+K	VisEquipment	noHair	736060327	bool
+K	VisEquipment	RightBackItem	-1483188092	int
+K	VisEquipment	RightBackItemQuality	-954702873	int
+K	VisEquipment	RightItem	1666617829	int
+K	VisEquipment	RightItemQuality	1910873528	int
+K	VisEquipment	ShoulderItem	-92457105	int
+K	VisEquipment	ShoulderItemQuality	-1325048706	int
+K	VisEquipment	ShoulderItemVariant	-798828510	int
+K	VisEquipment	SkinColor	-1813355678	vec3
+K	VisEquipment	TrinketItem	-203747986	int
+K	VisEquipment	UtilityItem	-2086293655	int
+K	WarriorNames	ModelIndex	-1224146579	int
+K	WarriorNames	overrideHoverName	1652771173	string
+K	WearNTear	health	-883022132	float
+K	WearNTear	preSnow	491610272	bool
+K	WearNTear	snow	1723421765	float
+K	WearNTear	support	642166391	float
+K	WispSpawner	LastSpawn	1735486393	long
+K	ZDO	spawnpoint	739771651	vec3
+K	ZDO	spawntime	28332284	long
+K	ZDOHelper	body_avel	912834361	vec3
+K	ZDOHelper	body_vel	868918214	vec3
+K	ZDOHelper	BodyVelocity	394770587	vec3
+K	ZDOHelper	LookTarget	-1185151196	vec3
+K	ZDOHelper	noise	82773412	float
+K	ZDOHelper	support	642166391	float
+K	ZDOHelper	tiltrot	-845014354	float
+K	ZDOHelper	vel	-1273338593	vec3
+K	ZDOMan	Content	1563053001	int
+K	ZDOMan	dataCount	586955499	int
+K	ZDOMan	item	-1126421579	int
+K	ZDOMan	items	-938864442	string
+K	ZDOMan	LeftItem	-1846321564	int
+K	ZDOMan	parent_id_i	-2003790966	long
+K	ZDOMan	parent_id_u	-2003790986	long
+K	ZDOMan	quality	917906861	int
+K	ZDOMan	rodOwner	747809534	long
+K	ZDOMan	RodOwner_i	603820302	long
+K	ZDOMan	RodOwner_u	-1365548166	long
+K	ZDOMan	roomData	790421931	bytes
+K	ZDOMan	rooms	1958046798	int
+K	ZDOMan	seed	-158744921	int
+K	ZDOMan	spawn_id_i	1155509183	long
+K	ZDOMan	spawn_id_u	-813859285	long
+K	ZDOMan	tag	696029674	string
+K	ZDOMan	target_i	824179215	long
+K	ZDOMan	target_u	-76498173	long
+K	ZDOMan	terrainModifierTimeCreated	-1101833055	long
+K	ZDOMan	user	1448002985	long
+K	ZDOMan	user_i	1729108779	long
+K	ZDOMan	user_u	-596490049	long
+K	ZDOMan	variant	1759467715	int
+K	ZNetView	HasFields	-310439593	bool
+K	ZNetView	scale	-528916476	vec3
+K	ZNetView	scaleScalar	-1726348180	float
+K	ZSFX	ownerZDOId	203554489	long
+K	ZSFX	ownerZDOUserId	1636053838	long
+K	ZSyncAnimation	animation_speed	-839225172	float
+K	ZSyncTransform	attachJoint	270116833	string
+K	ZSyncTransform	body_avel	912834361	vec3
+K	ZSyncTransform	body_vel	868918214	vec3
+K	ZSyncTransform	relPos	1664049635	vec3
+K	ZSyncTransform	relRot	622209746	quat
+K	ZSyncTransform	scale	-528916476	vec3
+K	ZSyncTransform	scaleScalar	-1726348180	float
+K	ZSyncTransform	vel	-1273338593	vec3
+K	ZSyncTransform	velRel	-446485424	vec3
+K	ZoneSystem	preSnow	491610272	bool

@@ -1,0 +1,66 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net48</TargetFramework>
+    <LangVersion>12</LangVersion>
+    <AssemblyName>Tractor</AssemblyName>
+    <RootNamespace>Tractor</RootNamespace>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <GamePath Condition="'$(GamePath)' == ''">C:\Program Files (x86)\Steam\steamapps\common\Valheim</GamePath>
+    <ManagedPath>$(GamePath)\valheim_Data\Managed</ManagedPath>
+    <PublicizedPath Condition="'$(PublicizedPath)' == ''">$(ManagedPath)\publicized_assemblies</PublicizedPath>
+    <BepInExCorePath Condition="'$(BepInExCorePath)' == ''">$(GamePath)\BepInEx\core</BepInExCorePath>
+    <PluginsPath Condition="'$(PluginsPath)' == ''">$(GamePath)\BepInEx\plugins</PluginsPath>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies" Version="1.0.3" PrivateAssets="all" />
+
+    <Reference Include="BepInEx" Private="false">
+      <HintPath>$(BepInExCorePath)\BepInEx.dll</HintPath>
+    </Reference>
+    <Reference Include="0Harmony" Private="false">
+      <HintPath>$(BepInExCorePath)\0Harmony.dll</HintPath>
+    </Reference>
+
+    <Reference Include="assembly_valheim" Private="false">
+      <HintPath>$(PublicizedPath)\assembly_valheim_publicized.dll</HintPath>
+    </Reference>
+    <Reference Include="assembly_utils" Private="false">
+      <HintPath>$(PublicizedPath)\assembly_utils_publicized.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine" Private="false">
+      <HintPath>$(ManagedPath)\UnityEngine.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.CoreModule" Private="false">
+      <HintPath>$(ManagedPath)\UnityEngine.CoreModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UIModule" Private="false">
+      <HintPath>$(ManagedPath)\UnityEngine.UIModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.PhysicsModule" Private="false">
+      <HintPath>$(ManagedPath)\UnityEngine.PhysicsModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.TextRenderingModule" Private="false">
+      <HintPath>$(ManagedPath)\UnityEngine.TextRenderingModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UI" Private="false">
+      <HintPath>$(ManagedPath)\UnityEngine.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.TextMeshPro" Private="false">
+      <HintPath>$(ManagedPath)\Unity.TextMeshPro.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="catalog.tsv" />
+    <EmbeddedResource Include="keys.tsv" />
+  </ItemGroup>
+
+  <Target Name="CopyAssembly" AfterTargets="Build" Condition="Exists('$(PluginsPath)')">
+    <Copy SourceFiles="$(TargetPath)" DestinationFolder="$(PluginsPath)\miker-Tractor" />
+  </Target>
+</Project>

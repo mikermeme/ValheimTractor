@@ -1,0 +1,8 @@
+﻿{
+  "name": "Tractor",
+  "version_number": "1.8.2",
+  "author": "Miker",
+  "description": "Client-side: inspect and edit every ZDO key and loadable component field on the hovered object, then copy values to nearby objects.",
+  "website_url": "",
+  "dependencies": [ "denikson-BepInExPack_Valheim-5.4.2202" ]
+}

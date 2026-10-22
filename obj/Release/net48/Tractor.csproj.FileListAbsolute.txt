@@ -1,0 +1,7 @@
+D:\Codex\Valheim\Tractor\obj\Release\net48\Tractor.csproj.AssemblyReference.cache
+D:\Codex\Valheim\Tractor\obj\Release\net48\Tractor.GeneratedMSBuildEditorConfig.editorconfig
+D:\Codex\Valheim\Tractor\obj\Release\net48\Tractor.csproj.CoreCompileInputs.cache
+D:\Codex\Valheim\Tractor\bin\Release\net48\Tractor.dll
+D:\Codex\Valheim\Tractor\bin\Release\net48\Tractor.pdb
+D:\Codex\Valheim\Tractor\obj\Release\net48\Tractor.dll
+D:\Codex\Valheim\Tractor\obj\Release\net48\Tractor.pdb
