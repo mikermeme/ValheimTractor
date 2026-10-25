@@ -58,10 +58,10 @@ public static class PluginConfig {
         config.BindInOrder(
             "Selection",
             "lookRadius",
-            4f,
+            0f,
             "Radius in meters of the sphere used when Shift+RightClick has no hover target. The sphere touches"
             + " the player and reaches along the look direction; the search grows to twice and four times this"
-            + " radius before giving up. Set it to 0 to disable the search.",
+            + " radius before giving up. The default of 0 disables the search.",
             new AcceptableValueRange<float>(0f, 20f));
 
     AutoApply =

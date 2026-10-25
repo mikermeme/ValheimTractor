@@ -1,5 +1,18 @@
 ## Changelog
 
+### 1.8.4
+
+  * Moved shortcut handling out of the player patch and reused the panel's cursor handling.
+  * Simplified catalog loading, look-target selection, and prefab field restoration with guard clauses.
+  * Cached field-override hashes and simplified key type labels. Editing behavior and config remain unchanged.
+
+### 1.8.3
+
+  * `lookRadius` now defaults to `0`, so the no-hover search stays off until it is turned on.
+  * The `Radius:` label measures its own text, so it no longer ellipsizes to `Radi...`. The radius field and the scope
+    buttons are slightly narrower to pay for the extra room, and the scope row uses tighter spacing inside each group.
+  * Added `USAGE.md`, a player-facing guide, next to the reference `README.md`.
+
 ### 1.8.2
 
   * Fixed the selected-key line and the status line going blank with `uiFont = AveriaSans`. Those two labels sit

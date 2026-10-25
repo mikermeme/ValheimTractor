@@ -559,19 +559,25 @@ public static class TractorPanel {
   static void CreateScopeRows(Transform parentTransform) {
     GameObject row = UI.CreateRow(parentTransform, "Editor.Scope", Style.FontSize(28f));
 
+    // Tighter spacing inside each group, so the spare width stays in the two group gaps.
+    row.GetComponent<HorizontalLayoutGroup>().spacing = 4f;
+
     TextMeshProUGUI title = UI.CreateLabel(row.transform, "RadiusTitle");
     title.text = "Radius:";
     title.fontSize = Style.FontSize(12f);
     title.color = ScopeTextColor;
-    title.gameObject.AddComponent<LayoutElement>().preferredWidth = 40f;
+
+    // Measure the label with the panel font, so the text never ellipsizes at "Radi...".
+    title.gameObject.AddComponent<LayoutElement>().preferredWidth =
+        Mathf.Max(title.GetPreferredValues(title.text).x + 6f, Style.FontSize(46f));
 
     _radiusInput = UI.CreateInputField(row.transform, "32", 12f);
     _radiusInput.onEndEdit.AddListener(OnRadiusInputEndEdit);
     _radiusInput.onSubmit.AddListener(OnRadiusInputEndEdit);
 
     LayoutElement radiusLayout = _radiusInput.gameObject.AddComponent<LayoutElement>();
-    radiusLayout.minWidth = 40f;
-    radiusLayout.preferredWidth = 40f;
+    radiusLayout.minWidth = 36f;
+    radiusLayout.preferredWidth = 36f;
     radiusLayout.minHeight = Style.FontSize(20f);
     radiusLayout.preferredHeight = Style.FontSize(20f);
 
@@ -607,7 +613,7 @@ public static class TractorPanel {
   }
 
   static Button CreateScopeButton(Transform parentTransform, string text) {
-    Button button = UI.CreateButton(parentTransform, text, 56f);
+    Button button = UI.CreateButton(parentTransform, text, 54f);
     button.GetComponentInChildren<TextMeshProUGUI>().fontSize = Style.FontSize(12f);
     return button;
   }
@@ -1136,7 +1142,7 @@ public static class TractorPanel {
         || (Chat.instance && Chat.instance.HasFocus());
   }
 
-  static void KeepCursorVisible() {
+  public static void KeepCursorVisible() {
     ZCursor.LockState = CursorLockMode.None;
     ZCursor.Show();
   }

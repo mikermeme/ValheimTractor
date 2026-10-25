@@ -15,7 +15,7 @@ using static PluginConfig;
 public sealed class Tractor : BaseUnityPlugin {
   public const string PluginGuid = "miker.valheim.tractor";
   public const string PluginName = "Tractor";
-  public const string PluginVersion = "1.8.2";
+  public const string PluginVersion = "1.8.4";
 
   static ManualLogSource _logger;
 

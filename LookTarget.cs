@@ -7,9 +7,6 @@ using HarmonyLib;
 
 using UnityEngine;
 
-// Shift+RightClick on nothing used to do nothing. This finds a networked object in a sphere that
-// touches the player and reaches along the look direction, so effects and markers with no hover
-// collider can still be opened.
 public static class LookTarget {
   const int MaxStages = 3;
 
@@ -102,12 +99,20 @@ public static class LookTarget {
           bestSolid = netView;
           bestSolidDistance = sqrDistance;
         }
-      } else if (netView.GetComponentInChildren<Renderer>(includeInactive: true)) {
+
+        continue;
+      }
+
+      if (netView.GetComponentInChildren<Renderer>(includeInactive: true)) {
         if (sqrDistance < bestVisibleDistance) {
           bestVisible = netView;
           bestVisibleDistance = sqrDistance;
         }
-      } else if (sqrDistance < bestInvisibleDistance) {
+
+        continue;
+      }
+
+      if (sqrDistance < bestInvisibleDistance) {
         bestInvisible = netView;
         bestInvisibleDistance = sqrDistance;
       }

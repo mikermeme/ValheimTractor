@@ -13,6 +13,11 @@ using static PluginConfig;
 public static class ZdoEditor {
   const string HasFieldsKey = "HasFields";
 
+  static readonly int HasFieldsHashCode = HasFieldsKey.GetStableHashCode();
+
+  // Keep removed keys discoverable even when the catalog does not tie them to a component.
+  static readonly Dictionary<int, Dictionary<int, ZdoKnownKey>> _observedKeys = new();
+
   public static List<ZdoKeyRow> ReadKeys(ZDO zdo, ZNetView netView, HashSet<int> hiddenHashes) {
     ZdoData data = ZdoData.Read(zdo);
     List<ZdoKeyRow> rows = new();
@@ -45,11 +50,6 @@ public static class ZdoEditor {
     rows.Sort(CompareKeyRows);
     return rows;
   }
-
-  // Keys already seen on this prefab, so a key whose value was removed stays listed as not set.
-  // keys.tsv only names keys per component type, and some keys (CheatUtils.cheated, for example)
-  // belong to no component, so they would otherwise vanish with their value.
-  static readonly Dictionary<int, Dictionary<int, ZdoKnownKey>> _observedKeys = new();
 
   static void AddObservedKeyRows(ZDO zdo, List<ZdoKeyRow> rows, HashSet<int> storedHashes) {
     int prefabHash = zdo.GetPrefab();
@@ -235,7 +235,7 @@ public static class ZdoEditor {
 
     string componentName = row.ComponentType.Name;
 
-    zdo.Set(HasFieldsKey, true);
+    zdo.Set(HasFieldsHashCode, true);
     zdo.Set(HasFieldsKey + componentName, true);
     SetFieldValue(zdo, row, zdoValue);
 
@@ -259,17 +259,7 @@ public static class ZdoEditor {
 
     zdo.Remove(row.Hash);
 
-    if (ZNetScene.instance) {
-      GameObject prefab = ZNetScene.instance.GetPrefab(zdo.GetPrefab());
-
-      if (prefab) {
-        Component prefabComponent = FindComponent(prefab, row.ComponentType);
-
-        if (prefabComponent && row.Component) {
-          row.Field.SetValue(row.Component, row.Field.GetValue(prefabComponent));
-        }
-      }
-    }
+    RestorePrefabField(zdo, row);
 
     if (netView && netView.IsValid()) {
       netView.LoadFields();
@@ -282,6 +272,26 @@ public static class ZdoEditor {
     }
 
     return true;
+  }
+
+  static void RestorePrefabField(ZDO zdo, ZdoFieldRow row) {
+    if (!ZNetScene.instance) {
+      return;
+    }
+
+    GameObject prefab = ZNetScene.instance.GetPrefab(zdo.GetPrefab());
+
+    if (!prefab) {
+      return;
+    }
+
+    Component prefabComponent = FindComponent(prefab, row.ComponentType);
+
+    if (!prefabComponent || !row.Component) {
+      return;
+    }
+
+    row.Field.SetValue(row.Component, row.Field.GetValue(prefabComponent));
   }
 
   public static bool TryRemoveKey(ZdoTarget target, ZdoKeyRow row, out string error) {
@@ -381,6 +391,7 @@ public static class ZdoEditor {
     List<ZDO> candidates = GetCandidates(targetZdo, zoneOnly, BulkRadius.Value);
     int applied = 0;
     string componentName = row.ComponentType.Name;
+    int componentFieldsHashCode = (HasFieldsKey + componentName).GetStableHashCode();
 
     for (int i = 0; i < candidates.Count; i++) {
       ZDO zdo = candidates[i];
@@ -398,8 +409,8 @@ public static class ZdoEditor {
       candidateCount++;
       Claim(zdo);
 
-      zdo.Set(HasFieldsKey, true);
-      zdo.Set(HasFieldsKey + componentName, true);
+      zdo.Set(HasFieldsHashCode, true);
+      zdo.Set(componentFieldsHashCode, true);
       SetFieldValue(zdo, row, zdoValue);
 
       ZNetView netView = ZNetScene.instance.FindInstance(zdo);

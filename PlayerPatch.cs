@@ -5,14 +5,10 @@ using System.Reflection.Emit;
 
 using HarmonyLib;
 
-using UnityEngine;
-
 using static PluginConfig;
 
 [HarmonyPatch(typeof(Player))]
 static class PlayerPatch {
-  static int _shortcutFrame = -1;
-
   [HarmonyPrefix]
   [HarmonyPatch(nameof(Player.TakeInput))]
   static bool TakeInputPrefix() {
@@ -20,17 +16,7 @@ static class PlayerPatch {
       return true;
     }
 
-    if (_shortcutFrame == Time.frameCount) {
-      return false;
-    }
-
-    if (IsShortcutPressed()) {
-      _shortcutFrame = Time.frameCount;
-      TractorPanel.ToggleHovered();
-      return false;
-    }
-
-    return !TractorPanel.IsOpen;
+    return TractorInputController.TakeInput();
   }
 
   [HarmonyTranspiler]
@@ -54,13 +40,5 @@ static class PlayerPatch {
     }
 
     TractorPanel.Update();
-  }
-
-  static bool IsShortcutPressed() {
-    return ZInput.GetKeyDown(OpenKey.Value) || (IsShiftHeld() && ZInput.GetMouseButtonDown(1));
-  }
-
-  static bool IsShiftHeld() {
-    return ZInput.GetKey(KeyCode.LeftShift) || ZInput.GetKey(KeyCode.RightShift);
   }
 }

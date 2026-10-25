@@ -12,10 +12,11 @@ clients.
 
   * `Shift+RightClick` or `F8` opens and closes the panel. `Escape` also closes it, and a click anywhere outside the
     panel closes it like `Shift+RightClick`.
-  * If nothing is hovered, `Shift+RightClick` looks for a networked object in front of the player instead. The search
-    starts with a sphere that touches the player and reaches `lookRadius` meters along the look direction, then
-    doubles that distance twice before it gives up. Effects and markers that have no collider win over solid
-    objects, and the status line says what it picked.
+  * If nothing is hovered, `Shift+RightClick` can look for a networked object in front of the player instead. The
+    search starts with a sphere that touches the player and reaches `lookRadius` meters along the look direction,
+    then doubles that distance twice before it gives up. Effects and markers that have no collider win over solid
+    objects, and the status line says what it picked. The search is off by default; set `lookRadius` above `0` to
+    turn it on.
   * The panel title is the prefab name. The list below shows keys and fields together. The filter box searches both
     kinds.
   * Rows are ordered by group, then by name: pinned keys, then pinned fields, then stored field overrides,
@@ -69,9 +70,9 @@ Value formats:
     on the left half of the screen; a saved `0, 0` counts as unset.
   * `bulkRadius`: radius in meters for the radius bulk action (default `32`). The `Radius:` field in the panel
     writes this value.
-  * `lookRadius`: radius in meters of the sphere used when `Shift+RightClick` has no hover target (default `4`).
-    The sphere touches the player and reaches along the look direction, and the search grows to twice and four
-    times this radius before giving up. `0` turns the search off.
+  * `lookRadius`: radius in meters of the sphere used when `Shift+RightClick` has no hover target (default `0`, which
+    turns the search off). The sphere touches the player and reaches along the look direction, and the search grows
+    to twice and four times this radius before giving up.
   * `autoApply`: apply the editor value when it loses focus (default `true`).
   * `uiTheme`: `Vanilla` skins the panel with the game's lit wood panel, wood buttons, text field, and scrollbar
     sprites; `Dark` uses flat colors. A change applies the next time the panel opens.
@@ -95,3 +96,5 @@ refuse ownership, in which case the edit does not replicate.
     dedicated server still has the old key. Run Tractor on the host to keep a removal in the world save.
   * Other clients load field overrides when they create the object. A client that already has the object live does
     not run `LoadFields()` again, so the value can stay stale until that object reloads.
+
+See `USAGE.md` for a player-facing walkthrough of the panel.

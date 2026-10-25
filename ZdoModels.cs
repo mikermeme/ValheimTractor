@@ -29,33 +29,19 @@ public sealed class ZdoKeyRow {
   public bool CanEdit => Type != ZdoKeyType.Connection;
   public bool CanRemove => Type != ZdoKeyType.Connection && !IsMissing;
 
-  public string TypeText {
-    get {
-      switch (Type) {
-        case ZdoKeyType.Int:
-          return IsBool ? "bool" : "int";
-        case ZdoKeyType.Float:
-          return "float";
-        case ZdoKeyType.Vector3:
-          return "vec3";
-        case ZdoKeyType.Quaternion:
-          return "quat";
-        case ZdoKeyType.Long:
-          return "long";
-        case ZdoKeyType.String:
-          return "string";
-        case ZdoKeyType.Bytes:
-          return "bytes";
-        default:
-          return "connection";
-      }
-    }
-  }
+  public string TypeText => Type switch {
+    ZdoKeyType.Int => IsBool ? "bool" : "int",
+    ZdoKeyType.Float => "float",
+    ZdoKeyType.Vector3 => "vec3",
+    ZdoKeyType.Quaternion => "quat",
+    ZdoKeyType.Long => "long",
+    ZdoKeyType.String => "string",
+    ZdoKeyType.Bytes => "bytes",
+    _ => "connection",
+  };
 
   // The catalog does not know this hash, so the name is rendered as '<hash>'.
-  public bool IsUnresolved {
-    get { return Name.Length > 2 && Name[0] == '<' && Name[Name.Length - 1] == '>'; }
-  }
+  public bool IsUnresolved => Name.Length > 2 && Name[0] == '<' && Name[Name.Length - 1] == '>';
 
   public ZdoKeyRow(ZdoKeyType type, int hash, string name, string valueText, bool isBool)
       : this(type, hash, name, valueText, isBool, isMissing: false) {}

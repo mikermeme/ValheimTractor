@@ -36,12 +36,14 @@ public static class ZdoCatalog {
 
     int hash = name.GetStableHashCode();
 
-    if (!_names.ContainsKey(hash)) {
-      _names.Add(hash, name);
+    if (_names.ContainsKey(hash)) {
+      return;
+    }
 
-      if (name.StartsWith("HasFields", StringComparison.Ordinal)) {
-        _boolHashes.Add(hash);
-      }
+    _names.Add(hash, name);
+
+    if (name.StartsWith("HasFields", StringComparison.Ordinal)) {
+      _boolHashes.Add(hash);
     }
   }
 
@@ -67,10 +69,12 @@ public static class ZdoCatalog {
       }
     }
 
-    if (_classBases.TryGetValue(className, out string[] bases)) {
-      for (int i = 0; i < bases.Length; i++) {
-        CollectKnownKeys(bases[i], keys, visited);
-      }
+    if (!_classBases.TryGetValue(className, out string[] bases)) {
+      return;
+    }
+
+    for (int i = 0; i < bases.Length; i++) {
+      CollectKnownKeys(bases[i], keys, visited);
     }
   }
 
@@ -105,30 +109,38 @@ public static class ZdoCatalog {
         continue;
       }
 
-      if (line[0] == 'K') {
-        int tabIndex = line.IndexOf('\t');
-
-        if (tabIndex < 2) {
-          continue;
-        }
-
+      if (line[0] == 'B') {
         if (int.TryParse(
-                line.Substring(1, tabIndex - 1),
-                NumberStyles.Integer,
-                CultureInfo.InvariantCulture,
-                out int hash)) {
-          string name = line.Substring(tabIndex + 1);
-          _names[hash] = name;
+                line.Substring(1), NumberStyles.Integer, CultureInfo.InvariantCulture, out int boolHash)) {
+          _boolHashes.Add(boolHash);
+        }
 
-          if (name.StartsWith("HasFields", StringComparison.Ordinal)) {
-            _boolHashes.Add(hash);
-          }
-        }
-      } else if (line[0] == 'B') {
-        if (int.TryParse(
-                line.Substring(1), NumberStyles.Integer, CultureInfo.InvariantCulture, out int hash)) {
-          _boolHashes.Add(hash);
-        }
+        continue;
+      }
+
+      if (line[0] != 'K') {
+        continue;
+      }
+
+      int tabIndex = line.IndexOf('\t');
+
+      if (tabIndex < 2) {
+        continue;
+      }
+
+      if (!int.TryParse(
+              line.Substring(1, tabIndex - 1),
+              NumberStyles.Integer,
+              CultureInfo.InvariantCulture,
+              out int hash)) {
+        continue;
+      }
+
+      string name = line.Substring(tabIndex + 1);
+      _names[hash] = name;
+
+      if (name.StartsWith("HasFields", StringComparison.Ordinal)) {
+        _boolHashes.Add(hash);
       }
     }
   }

@@ -2,8 +2,6 @@ namespace Tractor;
 
 using HarmonyLib;
 
-using UnityEngine;
-
 using static PluginConfig;
 
 [HarmonyPatch(typeof(GameCamera))]
@@ -15,8 +13,7 @@ static class GameCameraPatch {
       return true;
     }
 
-    ZCursor.LockState = CursorLockMode.None;
-    ZCursor.Show();
+    TractorPanel.KeepCursorVisible();
 
     return false;
   }
